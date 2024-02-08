@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from 'framer-motion';
 
 function ChampionGrid({ data }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -19,26 +20,31 @@ function ChampionGrid({ data }) {
         const isHovered = hoveredIndex === index;
 
         return (
-          <div
-            key={championId}
-            className={`w-full h-full object-cover p-5 ${isHovered ? 'hover:scale-105 hover:clip-path' : ''}`}
-            style={{
-                clipPath: isHovered ? '' : 'polygon(68% 0, 100% 15%, 100% 100%, 0 100%, 0 0)',
-                transition: 'transform 0.5s ease-in-out, clip-path 0.8s ease-in-out',  
-            }}
-              
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={handleMouseLeave}
-          >
+          <motion.div
+          key={championId}
+          className="w-full h-full object-cover p-5 overflow-hidden"
+          style={{
+            clipPath: isHovered ? '' : 'polygon(68% 0, 100% 15%, 100% 100%, 0 100%, 0 0)',
+          }}
+          whileHover={{
+            scale: 1.05,
+            clipPath: '',
+            transition: { duration: 0.5, ease: 'easeInOut' },
+          }}
+          initial={{ scale: 1, clipPath: 'polygon(68% 0, 100% 15%, 100% 100%, 0 100%, 0 0)' }}
+          animate={{ scale: isHovered ? 1.05 : 1, clipPath: isHovered ? '' : 'polygon(68% 0, 100% 15%, 100% 100%, 0 100%, 0 0)' }}
+          onMouseEnter={() => handleMouseEnter(index)}
+          onMouseLeave={handleMouseLeave}
+        >
             <img
               className="w-full h-[80%] object-cover "
               src={imageUrl}
               alt={champion.name}
             />
-            <div className="w-full h-[60px] flex justify-center items-center bg-[#061C25] duration-400 hover:bg-[#006680]">
+            <div className="w-full h-[60px] flex justify-center items-center bg-[#061C25] duration-400">
               <p className="text-2xl text-white">{champion.name}</p>
             </div>
-          </div>
+          </motion.div>
         );
       })}
     </div>
