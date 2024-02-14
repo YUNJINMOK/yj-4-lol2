@@ -17,7 +17,7 @@ export default function MainPage() {
                     <div className="text-sm">
                         리그 오브 레전드 앱을 다운로드해 친구들과 대화하고 최신 게임 및 e스포츠 소식을 확인해 보세요.
                     </div>
-                    <div className="flex justify-center items-center mr-20 space-x-3">
+                    <div className="flex justify-center items-center space-x-3">
                         <Link
                             to={
                                 'https://apps.apple.com/kr/app/%EB%9D%BC%EC%9D%B4%EC%97%87-%EB%AA%A8%EB%B0%94%EC%9D%BC/id1077150310?ls=1'
@@ -45,7 +45,7 @@ export default function MainPage() {
                     </div>
                 </div>
                 <div className=" w-full h-[80px] bg-[#292929] flex justify-center ">
-                    <div className="max-w-[1440px] w-full h-full flex justify-center items-center text-white space-x-10 text-sm">
+                    <div className="max-w-[1440px] w-full h-full flex justify-center items-center text-white space-x-4 text-sm">
                         <div className="w-[100px] h-[40px] hover:bg-[#d49466] flex justify-center items-center rounded-xl cursor-pointer">
                             고객지원
                         </div>
