@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 function ChampionGrid({ data }) {
     const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -21,34 +22,35 @@ function ChampionGrid({ data }) {
                     const isHovered = hoveredIndex === index;
 
                     return (
-                        <motion.div
-                            key={championId}
-                            className="w-full h-full object-cover p-5 overflow-hidden"
-                            style={{
-                                clipPath: isHovered ? '' : 'polygon(68% 0, 100% 15%, 100% 100%, 0 100%, 0 0)',
-                            }}
-                            whileHover={{
-                                scale: 1.05,
-                                clipPath: '',
-                                transition: { duration: 0.5, ease: 'easeInOut' },
-                            }}
-                            initial={{ scale: 1, clipPath: 'polygon(68% 0, 100% 15%, 100% 100%, 0 100%, 0 0)' }}
-                            animate={{
-                                scale: isHovered ? 1.05 : 1,
-                                clipPath: isHovered ? '' : 'polygon(68% 0, 100% 15%, 100% 100%, 0 100%, 0 0)',
-                            }}
-                            onMouseEnter={() => handleMouseEnter(index)}
-                            onMouseLeave={handleMouseLeave}
-                        >
-                            <img className="w-full h-[80%] object-cover " src={imageUrl} alt={champion.name} />
+                        <Link to="/Detail" target="_blank">
                             <motion.div
-                                className="w-full h-[60px] flex justify-center items-center"
-                                style={{ backgroundColor: isHovered ? '#006680' : '#061C25' }}
-                                transition={{ duration: 0.6, ease: 'easeInOut' }}
+                                key={championId}
+                                className="w-full h-full object-cover p-5 overflow-hidden"
+                                style={{
+                                    clipPath: isHovered ? '' : 'polygon(68% 0, 100% 15%, 100% 100%, 0 100%, 0 0)',
+                                }}
+                                whileHover={{
+                                    scale: 1.05,
+                                    transition: { duration: 0.5, ease: 'easeInOut' },
+                                }}
+                                initial={{ clipPath: 'polygon(68% 0, 100% 15%, 100% 100%, 0 100%, 0 0)' }}
+                                animate={{
+                                    scale: isHovered ? 1.05 : 1,
+                                    clipPath: isHovered ? '' : 'polygon(68% 0, 100% 15%, 100% 100%, 0 100%, 0 0)',
+                                }}
+                                onMouseEnter={() => handleMouseEnter(index)}
+                                onMouseLeave={handleMouseLeave}
                             >
-                                <p className="text-2xl text-white">{champion.name}</p>
+                                <img className="w-full h-[80%] object-cover" src={imageUrl} alt={champion.name} />
+                                <motion.div
+                                    className="w-full h-[60px] flex justify-center items-center"
+                                    style={{ backgroundColor: isHovered ? '#006680' : '#061C25' }}
+                                    transition={{ duration: 0.6, ease: 'easeInOut' }}
+                                >
+                                    <p className="text-2xl text-white">{champion.name}</p>
+                                </motion.div>
                             </motion.div>
-                        </motion.div>
+                        </Link>
                     );
                 })}
         </div>
