@@ -1,3 +1,5 @@
+import logo1 from '../assets/png/logo.png';
+
 export default function Header() {
     return (
         <div className="w-full h-[78px] bg-[#111111] flex justify-center  ">
