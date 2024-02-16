@@ -22,7 +22,7 @@ function ChampionGrid({ data }) {
                     const isHovered = hoveredIndex === index;
 
                     return (
-                        <Link to="/Detail" target="_blank">
+                        <Link to="Detail" target="_blank">
                             <motion.div
                                 key={championId}
                                 className="w-full h-full object-cover p-5 overflow-hidden"

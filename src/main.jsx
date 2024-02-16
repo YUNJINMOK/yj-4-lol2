@@ -12,7 +12,7 @@ const router = createBrowserRouter([
         element: <MainPage />,
     },
     {
-        path: '/Detail',
+        path: 'Detail',
         element: <ChampionDetail />,
     },
 ]);
