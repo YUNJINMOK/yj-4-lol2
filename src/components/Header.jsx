@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo1 from '../assets/png/logo.png';
 
 export default function Header() {
@@ -10,9 +11,11 @@ export default function Header() {
                 </div>
                 {/* 리스트 */}
                 <div className=" flex h-full justify-center items-center gap-10 text-white ">
-                    <div className="w-[100px] h-[40px] hover:bg-[#d49466] flex justify-center items-center rounded-xl cursor-pointer">
-                        챔피언
-                    </div>
+                    <Link to="/">
+                        <div className="w-[100px] h-[40px] hover:bg-[#d49466] flex justify-center items-center rounded-xl cursor-pointer">
+                            챔피언
+                        </div>
+                    </Link>
                     <div className="w-[100px] h-[40px] hover:bg-[#d49466] flex justify-center items-center rounded-xl cursor-pointer">
                         E스포츠
                     </div>

@@ -59,21 +59,31 @@ export default function Footer() {
             <div className=" w-full h-full bg-[#111111] flex justify-center">
                 <div className="max-w-[1200px] w-full h-full flex flex-col items-center">
                     <div className="max-w-[600px] w-full flex justify-center space-x-3 py-5 ">
-                        <span className="w-[32px] h-[32px] bg-[#202020] flex justify-center items-center rounded-xl text-lg text-white">
-                            <FaYoutube />
-                        </span>
-                        <span className="w-[32px] h-[32px] bg-[#202020] flex justify-center items-center rounded-xl text-lg text-white">
-                            <FaInstagram />
-                        </span>
-                        <span className="w-[32px] h-[32px] bg-[#202020] flex justify-center items-center rounded-xl text-lg text-white">
-                            <FaFacebookSquare />
-                        </span>
-                        <span className="w-[32px] h-[32px] bg-[#202020] flex justify-center items-center rounded-xl text-lg text-white">
-                            <FaTwitter />
-                        </span>
-                        <span className="w-[32px] h-[32px] bg-[#202020] flex justify-center items-center rounded-xl text-lg text-white">
-                            <FaReddit />
-                        </span>
+                        <Link to="https://www.youtube.com/channel/UCooLkG0FfrkPBQsSuC95L6w" target="_blank">
+                            <span className="w-[32px] h-[32px] bg-[#202020] flex justify-center items-center rounded-xl text-lg text-white">
+                                <FaYoutube />
+                            </span>
+                        </Link>
+                        <Link to="https://www.instagram.com/leagueoflegendskorea/" target="_blank">
+                            <span className="w-[32px] h-[32px] bg-[#202020] flex justify-center items-center rounded-xl text-lg text-white">
+                                <FaInstagram />
+                            </span>
+                        </Link>
+                        <Link to="https://www.facebook.com/LeagueofLegendsKor?fref=ts" target="_blank">
+                            <span className="w-[32px] h-[32px] bg-[#202020] flex justify-center items-center rounded-xl text-lg text-white">
+                                <FaFacebookSquare />
+                            </span>
+                        </Link>
+                        <Link to="https://twitter.com/LeagueOfLegends" target="_blank">
+                            <span className="w-[32px] h-[32px] bg-[#202020] flex justify-center items-center rounded-xl text-lg text-white">
+                                <FaTwitter />
+                            </span>
+                        </Link>
+                        <Link to="https://www.reddit.com/r/leagueoflegends/" target="_blank">
+                            <span className="w-[32px] h-[32px] bg-[#202020] flex justify-center items-center rounded-xl text-lg text-white">
+                                <FaReddit />
+                            </span>
+                        </Link>
                     </div>
                     <div className="w-[90px] h-[32px] py-3">
                         <img className="" src={logo1} alt="logo" />
